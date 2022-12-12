@@ -1,0 +1,6 @@
+.form-control:focus ,.form-control.is-valid:focus,.form-control.is-invalid:focus {
+    box-shadow: none;
+}
+.alert {
+    padding: 0.5rem 0.5rem
+}

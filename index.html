@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Crud Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,600italic,700,700italic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class=" w-75 mx-auto py-5 ">
+        <h3 class="py-3">
+            Product Management System
+        </h3>
+
+        <label for="productNameInput">Product Name</label>
+        <input type="text" oninput="validateName()" class=" form-control my-2 " name="" id="productNameInput">
+        <p class="alert alert-danger d-none nameAlart ">Name must be less than 8 character and more than 3 character </p>
+        <label for="productPriceInput">Product Price</label>
+        <input type="number" class=" 
+        form-control mb-3 mt-2 " name="" id="productPriceInput">
+
+
+        <label for="productCategoryInput">Product Category</label>
+        <input type="text" class=" form-control mb-3 mt-2" name="" id="productCategoryInput">
+
+
+        <label for="productDescriptionInput">Product Description</label>
+        <textarea type="text" class=" form-control mb-3 mt-2" name="" id="productDescriptionInput">
+
+        </textarea>
+        <p class="alert alert-danger d-none allError ">An error with data , check again</p>
+
+        <button class=" btn btn-info float-end mb-5 text-white" onclick="addProduct();" id="addBtn">Add Product</button>
+        <button class=" btn btn-info float-end mb-5 text-white d-none" id="updateBtn" onclick="updateProduct()">Update
+            Product</button>
+
+        <input type="text" placeholder="Search by name" class="form-control mb-4 mt-5"
+            oninput="searchProduct(this.value)">
+
+        <table class=" table table-striped">
+            <thead>
+                <th>Index</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Description</th>
+                <th>update</th>
+                <th>delete</th>
+            </thead>
+            <tbody class="" id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
