@@ -1,9 +1,9 @@
-let productNameInput = document.getElementById("productNameInput"); //input kolo
-let productPriceInput = document.getElementById("productPriceInput"); //input kolo
-let productCategoryInput = document.getElementById("productCategoryInput"); //input kolo
+let productNameInput = document.getElementById("productNameInput"); 
+let productPriceInput = document.getElementById("productPriceInput"); 
+let productCategoryInput = document.getElementById("productCategoryInput"); 
 let productDescriptionInput = document.getElementById(
   "productDescriptionInput"
-); //input kolo
+); 
 let updateBtn = document.getElementById("updateBtn");
 let addBtn = document.getElementById("addBtn");
 let nameAlart=document.querySelector('.nameAlart')
@@ -82,6 +82,8 @@ function deleteProduct(deleteIndex) {
   productContainer.splice(deleteIndex, 1);
   localStorage.setItem("myProducts", JSON.stringify(productContainer));
   displayProduct(productContainer);
+  NoData()
+
 }
 
 function setFormForUpdate(updateIndex) {
@@ -109,12 +111,9 @@ function updateProduct() {
 function validateName(){
   var regaxName=/^[a-zA-Z]{2,8}$/;
   if(regaxName.test(productNameInput.value)==true){
-    
     productNameInput.classList.replace('is-invalid','is-valid')
     productNameInput.classList.remove('is-invalid');
     nameAlart.classList.replace('d-block','d-none')
-
-
     return true
   }
   else if(productNameInput.value==""){
@@ -130,3 +129,13 @@ function validateName(){
 
   }
 }
+
+
+function NoData(){
+  if(productContainer.length==0)
+  {
+    document.getElementById("tableBody").innerHTML = `<h4 class="text-danger">There is no data</h4>`;
+
+  }
+}
+NoData();
